@@ -6,6 +6,11 @@
 #
 import numpy as np    # Importa la libreria Numpy.
 
+def jls_extract_def():
+    # Restituisce il dizionario dei calcoli.
+    return 
+
+
 def calculate(list):    # Definisce la funzione.
 
     # Se nella funzione viene passato un elenco contenente meno di 9 elementi, solleva un'eccezione
@@ -24,7 +29,7 @@ def calculate(list):    # Definisce la funzione.
         # I valori nel dizionario restituito sono liste e non array Numpy.
         #
         mean_axis1 = np.mean(array3x3, axis=0).tolist()    # Calcola la media lungo gli assi verticali.
-        var_axis1 = np.var(array3x3, axis=0).tolist()    # Calcola la varianza lungo gli assi verticali.
+        var_axis1 = np.var(array3x3, axis=0, dtype=np.float64).tolist()    # Calcola la varianza lungo gli assi verticali.
         std_axis1 = np.std(array3x3, axis=0).tolist()    # Calcola la dev. standard lungo gli assi verticali.
         max_axis1 = np.max(array3x3, axis=0).tolist()    # Calcola il massimo lungo gli assi verticali.
         min_axis1 = np.min(array3x3, axis=0).tolist()    # Calcola la minimo lungo gli assi verticali.
@@ -33,7 +38,7 @@ def calculate(list):    # Definisce la funzione.
         # I valori nel dizionario restituito sono liste e non array Numpy.
         #
         mean_axis2 = np.mean(array3x3, axis=1).tolist()    # Calcola la media lungo gli assi orizzontali.
-        var_axis2 = np.var(array3x3, axis=1).tolist()    # Calcola la varianza lungo gli assi orizzontali.
+        var_axis2 = np.var(array3x3, axis=1, dtype=np.float64).tolist()    # Calcola la varianza lungo gli assi orizzontali.
         std_axis2 = np.std(array3x3, axis=1).tolist()    # Calcola la dev. standard lungo gli assi orizzontali.
         max_axis2 = np.max(array3x3, axis=1).tolist()    # Calcola il massimo lungo gli assi orizzontali.
         min_axis2 = np.min(array3x3, axis=1).tolist()    # Calcola la minimo lungo gli assi orizzontali.
@@ -42,7 +47,7 @@ def calculate(list):    # Definisce la funzione.
         # I valori nel dizionario restituito sono liste e non array Numpy.
         #
         mean_flattened = np.mean(array).tolist()
-        var_flattened = np.var(array).tolist()
+        var_flattened = np.var(array, dtype=np.float64).tolist()
         std_flattened = np.std(array).tolist()
         max_flattened = np.max(array).tolist()
         min_flattened = np.min(array).tolist()
@@ -79,4 +84,4 @@ def calculate(list):    # Definisce la funzione.
         calculations['min'] = min_list    # Inserisce la lista dei valori di minimo nel dizionario.
         calculations['sum'] = sum_list    # Inserisce la lista dei valori di somma nel dizionario.
         
-        return calculations    # Restituisce il dizionario dei calcoli.
+        return calculations    # Restituisce il dizionario dei calcoli. = jls_extract_def()
